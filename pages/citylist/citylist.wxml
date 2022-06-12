@@ -1,0 +1,4 @@
+<!--pages/city-list/citylist.wxml-->
+<view class="city-list">
+    <view class="city-item" wx:for="{{cityListData}}" wx:key="id"  data-info="{{item}}" bindtap="bindChangeCity">{{item.nm}}</view>
+</view>

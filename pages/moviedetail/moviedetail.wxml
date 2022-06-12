@@ -1,0 +1,32 @@
+<!--pages/moviedetail/moviedetail.wxml-->
+<view class="detail">
+    <view class="top">
+        <view class="image">
+            <image src="{{info.img?info.img:'/static/images/movie/movie_item1.png'}}" mode="widthFix"></image>
+        </view>
+        <view class="info">
+            <view class="title">{{info.nm}}</view>
+            <view class="etitle">{{info.enm}}</view>
+            <view class="text">{{info.cat}}</view>
+            <view class="text">{{info.pubDesc}}</view>
+            <view class="text">评分 {{info.sc}}</view>
+            <view class="text">导演 {{info.dir}}</view>
+        </view>
+    </view>
+    <view class="desc">
+        <view class="title">
+            <view class="text">简介</view>
+        </view>
+        <view class="text">
+            {{info.dra}}
+        </view>
+    </view>
+    <view class="photos">
+        <view class="title">剧照</view>
+        <scroll-view scroll-x="true">
+            <block wx:for="{{info.photos}}" wx:key="id">
+                <image src="{{item}}" mode="aspectFill"></image>
+            </block>
+        </scroll-view>
+    </view>
+</view>

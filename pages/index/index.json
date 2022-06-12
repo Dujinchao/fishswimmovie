@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "MovieList":"./components/movie-list/movie-list",
+    "Cinema":"./components/cinema/cinema"
+  },
+  "navigationStyle":"custom",
+  "navigationBarBackgroundColor": "#fff"
+}

@@ -1,0 +1,41 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/mine/mine",
+        "pages/order/order",
+        "pages/login/login",
+        "pages/citylist/citylist",
+        "pages/moviedetail/moviedetail"
+    ],
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "电影",
+                "iconPath": "/static/icons/电影.png",
+                "selectedIconPath": "/static/icons/电影-选中.png"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "text": "订单",
+                "iconPath": "/static/icons/电影.png",
+                "selectedIconPath": "/static/icons/电影-选中.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "/static/icons/我的.png",
+                "selectedIconPath": "/static/icons/我的-选中.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "鱼游电影",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

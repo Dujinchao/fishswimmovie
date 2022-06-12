@@ -1,0 +1,23 @@
+<!--pages/index/components/MovieList/MovieList.wxml-->
+
+<view>
+    <view class="movie-item" wx:for="{{resData}}" wx:key="unique">
+        <view class="image" bindtap="bindToMovieDetail" data-info="{{item}}">
+            <image src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <view class="info" bindtap="bindToMovieDetail" data-info="{{item}}">
+            <view class="name">{{item.nm}}</view>
+            <view class="text">
+                <text wx:if="{{!item.showStateButton}}"><text style="color:#FAAF00">{{item.wish}}</text>想看</text>
+                <text wx:elif="{{item.sc == 0}}">暂无评分</text>
+                <text wx:else>观众评分：<text style="color: red;">{{item.sc}}</text></text>
+            </view>
+            <view class="text">上映日期：{{item.rt}}</view>
+            <view class="text">主演：{{item.star}}</view>
+        </view>
+        <view class="handle">
+            <button class="buybtn" wx:if="{{item.showStateButton}}" style="background-color: {{item.showStateButton.color}}" bindtap="selectCinema(item.id)">{{item.showStateButton.content}}</button>
+            <button class="buybtn" style="background-color: #FAAF00" wx:else>想看</button>
+        </view>
+    </view>
+</view>

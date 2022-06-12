@@ -1,0 +1,61 @@
+/* pages/login/login.wxss */
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login .avatar_logo {
+  margin-top: 180rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+.login .text_logo {
+  margin-top: 10rpx;
+  height: 120rpx;
+}
+.login .read {
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+  /* 自定义 radio 样式 */
+  /* 选中后的样式 */
+}
+.login .read radio .wx-radio-input {
+  border-radius: 50%;
+  width: 28rpx;
+  height: 28rpx;
+}
+.login .read radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  font-size: 28rpx;
+  /* 对勾大小 */
+  color: #fff;
+  /* 对勾颜色 */
+  background: #333;
+}
+.login .read .link {
+  color: #78B7D0;
+  text-decoration: underline;
+}
+.login .wechat_login {
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 40rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 40rpx;
+  background-color: #FDA9A6;
+  color: #fff;
+  transition: all 0.15s;
+}
+.login .wechat_login.active {
+  background-color: #EB3855;
+}

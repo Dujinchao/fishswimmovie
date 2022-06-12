@@ -1,0 +1,10 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+    <image class="avatar_logo" src="/static/icons/avatar_default.png"></image>
+    <image class="text_logo" mode="heightFix" src="/static/icons/logo_text.png"></image>
+    <view class="read" bindtap="bindChangeReadStatus">
+        <radio class="read_btn" checked="{{read_status}}"/>
+        <text>您已阅读并同意<text class="link">《用户协议》</text> <text class="link">《隐私协议》</text></text>
+    </view>
+      <view  class="wechat_login {{read_status?'active':''}}" bindtap="{{read_status?'bindGetUserInfo':'bindReadPromise'}}">微信登录</view>
+</view>

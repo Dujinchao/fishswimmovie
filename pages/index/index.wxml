@@ -1,0 +1,35 @@
+<!--pages/index/index.wxml-->
+
+<view class="search" style="height: {{navigationBarHeight}}px;padding-top: {{navigationBarTop}}px;">
+  <view class="city" bindtap="bindToCityList">{{addressInfo.nm}}<image class="icon" src="/static/icons/下箭头.png"></image></view>
+  <view class="input">
+  <image class="icon" src="/static/icons/搜索.png"></image>
+  <input type="text" placeholder="请输入电影"/>
+  </view>
+</view>
+<!-- 占位 -->
+<view style="height: {{navigationBarHeight+navigationBarTop}}px;"></view>
+<view class="navbar">
+  <text class="item {{currentTab==index?'active':''}}" wx:for="{{navbar}}" data-tab_index="{{index}}" wx:key="unique" bindtap="changeNavBar">{{item}}</text>
+</view>
+<view style="height: 80rpx;"></view>
+<view hidden="{{currentTab!==0}}">
+  <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{400}}" circular="{{true}}" indicator-active-color="#fff" easing-function="easeInOutCubic">
+    <block wx:for="{{bannerData}}" wx:key="*this">
+      <swiper-item>
+        <view class="swiper-item">
+          <image src="{{item.imgSrc}}"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <MovieList resData="{{movieList}}"></MovieList>
+</view>
+
+<view hidden="{{currentTab!==1}}">
+  <Cinema cinemaListData="{{cinemaListData}}" districtListData="{{districtListData}}" brandListData="{{brandListData}}" addressInfo="{{addressInfo}}" iuuid="{{iuuid}}" today="{{today}}"/>
+</view>
+
+<view hidden="{{currentTab!==2}}">
+  <MovieList resData="{{comingMovieList}}"></MovieList>
+</view>

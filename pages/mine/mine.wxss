@@ -1,0 +1,29 @@
+/* pages/mine/mine.wxss */
+.userinfo {
+  height: 200rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size: 36rpx;
+  color: #fff;
+  background-color: #EB3855;
+  display: flex;
+  align-items: center;
+}
+.userinfo .userinfo-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  border: 3px solid #fff;
+}
+.handle-list {
+  padding: 20rpx;
+  min-height: 1084rpx;
+  background-color: #eee;
+}
+.handle-list .handle-item {
+  padding: 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}

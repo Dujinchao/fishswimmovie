@@ -1,0 +1,48 @@
+/* pages/order/order.wxss */
+.navbar {
+  z-index: 10;
+  width: 100%;
+  flex: none;
+  display: flex;
+  background: #fff;
+  position: fixed;
+}
+.navbar .item {
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+.navbar .item.active {
+  color: #EB3855;
+}
+.navbar .item.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6rpx;
+  background: #EB3855;
+}
+.order-list {
+  min-height: 1204rpx;
+  background-color: #eee;
+  overflow: hidden;
+}
+.order-list .order-item {
+  margin: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  height: 240rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.order-list .order-item .text {
+  margin-top: 10rpx;
+}
+.order-list .order-item .movieName {
+  font-size: 30rpx;
+  font-weight: bold;
+}

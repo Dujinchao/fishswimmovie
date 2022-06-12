@@ -1,0 +1,89 @@
+<!--pages/index/components/cinema-list/cinema-list.wxml-->
+<view class="cinema-container" style="overflow-y:hidden">
+    <view class="cinema-nav">
+        <!-- 导航条 -->
+        <view class="district {{ selectType === 'district'?'active':'' }}" bindtap="bindShowDistrictList">{{ district.name }}
+            <image class="icon" src="/static/icons/下箭头.png" style=" transform: {{selectType === 'district' ? 'rotate(180deg)':''}}"></image>
+        </view>
+        <view class="cinema  {{ selectType === 'cinema'?'active':'' }}" bindtap="bindShowCinemaList">{{ brand.name }}
+            <image class="icon" src="/static/icons/下箭头.png" style=" transform: {{selectType === 'cinema' ? 'rotate(180deg)':''}}"></image>
+        </view>
+    </view>
+    <!-- 城市、影院 下拉菜单 -->
+    <view class="hide-list" hidden="{{!selectShow}}" catchtouchmove='true'>
+        <!-- 城市下拉菜单 -->
+        <view class="district" wx:if="{{selectType === 'district'}}">
+            <view class="district-item" wx:for="{{districtListData}}" wx:key="id" bindtap="bindChangeDistrict" data-item="{{item}}">{{ item.name }}({{item.count}})</view>
+        </view>
+        <!-- 品牌影院下拉菜单 -->
+        <view class="cinema" wx:if="{{selectType === 'cinema'}}">
+            <view class="cinema-item" wx:for="{{brandListData}}" wx:key="id" bindtap="bindChangeBrand" data-item="{{item}}">{{item.name}}({{item.count}})</view>
+        </view>
+    </view>
+    <!-- 影院列表 -->
+    <view style="height: 60rpx;"></view>
+    <view class="cinema-list">
+        <!-- <view class="cinema-item">
+            <view class="info">
+                <view class="title">青岛城阳横店电影城</view>
+                <view class="address">城阳区政府</view>
+                <view class="discount-list">
+                    <view class="discount-item">
+                        <image class="icon" src="/static/icons/会员-选中.png"></image>
+                        <text>限量优惠，每张立减1~3元</text>
+                    </view>
+                    <view class="discount-item">
+                        <image class="icon" src="/static/icons/会员-选中.png"></image>
+                        <text>超低折扣电影券6.0折起</text>
+                    </view>
+                </view>
+            </view>
+            <view class="price-and-distance">
+                <view class="price_box">
+                    <text class="price_num">19.9</text>
+                    <text class="price_text">元</text>
+                    <text>起</text>
+                </view>
+                <view class="oldprice_box">
+                    <text class="oldprice_num">19.9</text>
+                    <text class="oldprice_text">元</text>
+                </view>
+                <view class="distance_box">
+                    <text class="distance_num">2.9</text>
+                    <text>km</text>
+                </view>
+            </view>
+        </view> -->
+        <view class="cinema-item"  wx:for="{{cinemaListData}}" wx:key="id">
+            <view class="info">
+                <view class="title">{{item.nm}}</view>
+                <view class="address">{{item.addr}}</view>
+                <view class="discount-list">
+                    <view class="discount-item">
+                        <image class="icon" src="/static/icons/会员-选中.png"></image>
+                        <text>限量优惠，每张立减1~3元</text>
+                    </view>
+                    <view class="discount-item">
+                        <image class="icon" src="/static/icons/会员-选中.png"></image>
+                        <text>超低折扣电影券6.0折起</text>
+                    </view>
+                </view>
+            </view>
+            <view class="price-and-distance">
+                <view class="price_box">
+                    <text class="price_num">{{item.sellPrice}}</text>
+                    <text class="price_text">元</text>
+                    <text>起</text>
+                </view>
+                <view class="oldprice_box">
+                    <text class="oldprice_num">19.9</text>
+                    <text class="oldprice_text">元</text>
+                </view>
+                <view class="distance_box">
+                    <text class="distance_num">2.9</text>
+                    <text>km</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
